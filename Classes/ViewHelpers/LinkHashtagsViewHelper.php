@@ -23,9 +23,26 @@ class LinkHashtagsViewHelper extends AbstractViewHelper
         if ($text === null) {
             $text = $this->renderChildren();
         }
-        $replaceString = '<a href="https://web-cdn.bsky.app/hashtag/$1"' . $this->getAttributeString() . '>$0</a>';
-        $text = preg_replace('/#([^\s]+)/', $replaceString, $text);
+        $text = $this->protectAsciiCharacters($text);
+        $text = $this->addLinks($text);
+        $text = $this->restoreAsciiCharacters($text);
         return $text;
+    }
+
+    private function protectAsciiCharacters(string $text): string
+    {
+        return preg_replace('~#([0-9]{3,4};)~', '# $1', $text);
+    }
+
+    private function addLinks(string $text): string
+    {
+        $replaceString = '<a href="https://web-cdn.bsky.app/hashtag/$1"' . $this->getAttributeString() . '>$0</a>';
+        return preg_replace('~#([^\s]+)~', $replaceString, $text);
+    }
+
+    private function restoreAsciiCharacters(string $text): string
+    {
+        return preg_replace('~# ([0-9]{3,4};)~', '#$1', $text);
     }
 
     private function getAttributeString(): string
