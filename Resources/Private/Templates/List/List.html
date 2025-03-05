@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:bsk="http://typo3.org/ns/In2code/Bluesky/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:if condition="{posts}">
+        <div class="flex">
+            <f:for each="{posts}" as="postsItem">
+                <div class="flex__md-3">
+                    <div class="c-card c-card--top c-card--gray">
+                        <f:comment>
+                            Image
+                        </f:comment>
+                        <f:variable name="imageUrl"><f:if condition="{postsItem.post.embed.external.thumb}"><f:then>{postsItem.post.embed.external.thumb}</f:then><f:else>{postsItem.post.embed.images.0.thumb}</f:else></f:if></f:variable>
+                        <f:if condition="{imageUrl}">
+                            <div class="c-card__image">
+                                <img src="{imageUrl}" alt=""/>
+                            </div>
+                        </f:if>
+
+                        <div class="c-card__content rte-content">
+                            <f:if condition="{postsItem.post.record.text}">
+                                <p><bsk:linkHashtags attributes="{target:'_blank',rel:'noreferrer'}">{postsItem.post.record.text}</bsk:linkHashtags></p>
+                            </f:if>
+
+                            <f:comment>
+                                Reposted text
+                            </f:comment>
+                            <f:if condition="{postsItem.post.embed.record.value.text}">
+                                <p><em>{postsItem.post.embed.record.value.text}</em></p>
+                            </f:if>
+
+                            <f:comment>
+                                Link to post
+                            </f:comment>
+                            <a href="https://web-cdn.bsky.app/profile/{settings.account}/post/{postsItem.post.uri -> bsk:getPostId()}" class="btn--arrow-next" target="_blank" rel="noreferrer">
+                                <f:translate key="showMore">more</f:translate>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+</html>

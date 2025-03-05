@@ -1,0 +1,36 @@
+{
+	"name": "in2code/bluesky",
+	"description": "Show bluesky feed in TYPO3",
+	"keywords": [
+		"typo3",
+		"bluesky"
+	],
+	"homepage": "https://github.com/in2code-de/bluesky",
+	"authors": [
+		{
+			"name": "Alex Kellner",
+			"email": "alexander.kellner@in2code.de",
+			"role": "Technical owner",
+			"homepage": "https://www.in2code.de"
+		}
+	],
+	"type": "typo3-cms-extension",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=8.2.0",
+		"typo3/cms-core": "^13.4"
+	},
+	"replace": {
+		"typo3-ter/bluesky": "self.version"
+	},
+	"autoload": {
+		"psr-4": {
+			"In2code\\Bluesky\\": "Classes/"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "bluesky"
+		}
+	}
+}

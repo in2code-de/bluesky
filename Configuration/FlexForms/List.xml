@@ -1,0 +1,31 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <main>
+            <ROOT>
+                <sheetTitle>Bluesky</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.account>
+                        <label>LLL:EXT:bluesky/Resources/Private/Language/locallang_db.xlf:plugin.list.flexform.account.label</label>
+                        <config>
+                            <type>input</type>
+                            <placeholder>in2code.de</placeholder>
+                            <eval>trim,required</eval>
+                        </config>
+                    </settings.account>
+                    <settings.limit>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:bluesky/Resources/Private/Language/locallang_db.xlf:plugin.list.flexform.limit.label</label>
+                        <config>
+                            <type>number</type>
+                            <default>10</default>
+                        </config>
+                    </settings.limit>
+                </el>
+            </ROOT>
+        </main>
+    </sheets>
+</T3DataStructure>

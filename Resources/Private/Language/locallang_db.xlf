@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2025-03-05T12:00:00Z" product-name="bluesky">
+		<header/>
+		<body>
+			<trans-unit id="plugin.list.title">
+				<source>Bluesky feed</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.description">
+				<source>Show a bluesky feed from a profile</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.flexform.account.label">
+				<source>Account name</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.flexform.limit.label">
+				<source>Limit number of posts</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
