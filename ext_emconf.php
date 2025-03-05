@@ -2,7 +2,7 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Show bluesky feed in TYPO3',
     'category' => 'plugin',
-    'version' => '1.0.1',
+    'version' => '1.1.0',
     'author' => 'Alex Kellner',
     'author_email' => 'alexander.kellner@in2code.de',
     'author_company' => 'in2code.de',

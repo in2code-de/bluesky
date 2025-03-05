@@ -19,14 +19,14 @@
 
                         <div class="c-card__content rte-content">
                             <f:if condition="{postsItem.post.record.text}">
-                                <p><bsk:linkHashtags attributes="{target:'_blank',rel:'noreferrer'}">{postsItem.post.record.text}</bsk:linkHashtags></p>
+                                <p><bsk:linkHashtags><bsk:linkUrl>{postsItem.post.record.text}</bsk:linkUrl></bsk:linkHashtags></p>
                             </f:if>
 
                             <f:comment>
                                 Reposted text
                             </f:comment>
                             <f:if condition="{postsItem.post.embed.record.value.text}">
-                                <p><em>{postsItem.post.embed.record.value.text}</em></p>
+                                <p><em><bsk:linkHashtags><bsk:linkUrl>{postsItem.post.embed.record.value.text}</bsk:linkUrl></bsk:linkHashtags></em></p>
                             </f:if>
 
                             <f:comment>
