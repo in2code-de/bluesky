@@ -16,7 +16,8 @@ Example plugin settings in backend:
 
 ## Changelog
 
-| Version | Date       | State  | Description                             |
-|---------|------------|--------|-----------------------------------------|
-| 1.0.1   | 2025-03-05 | Bugfix | Use default values if FlexForm is empty |
-| 1.0.0   | 2025-03-05 | Task   | Initial publish of the extension        |
+| Version | Date       | State   | Description                                                                             |
+|---------|------------|---------|-----------------------------------------------------------------------------------------|
+| 1.1.0   | 2025-03-05 | Feature | Autolink url in posts, don't use ascii characters as hashtags, ignore colon in hashtags |
+| 1.0.1   | 2025-03-05 | Bugfix  | Use default values if FlexForm is empty                                                 |
+| 1.0.0   | 2025-03-05 | Task    | Initial publish of the extension                                                        |
