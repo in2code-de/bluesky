@@ -16,3 +16,8 @@ ExtensionUtility::configurePlugin(
     [],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
+
+/**
+ * Fluid Namespace
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['bsk'][] = 'In2code\Bluesky\ViewHelpers';

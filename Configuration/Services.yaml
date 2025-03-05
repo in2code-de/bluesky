@@ -6,3 +6,6 @@ services:
 
   In2code\Bluesky\:
     resource: '../Classes/*'
+
+  In2code\Bluesky\Domain\Repository\BlueskyRepository:
+    public: true
