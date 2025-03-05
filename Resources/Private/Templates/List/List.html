@@ -19,7 +19,7 @@
 
                         <div class="c-card__content rte-content">
                             <f:if condition="{postsItem.post.record.text}">
-                                <p>{postsItem.post.record.text}</p>
+                                <p><bsk:linkHashtags attributes="{target:'_blank',rel:'noreferrer'}">{postsItem.post.record.text}</bsk:linkHashtags></p>
                             </f:if>
 
                             <f:comment>
