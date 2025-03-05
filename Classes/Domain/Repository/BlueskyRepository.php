@@ -24,8 +24,8 @@ class BlueskyRepository
     public function findBySettings(array $settings): array
     {
         $parameters = [
-            'actor' => $settings['account'],
-            'limit' => $settings['limit'],
+            'actor' => $settings['account'] ?? 'in2code.de',
+            'limit' => (int)($settings['limit'] ?? 10) ?: 10,
             'filter' => 'posts_and_author_threads',
         ];
         $response = $this->requestFactory->request(self::API_URL . '?' . http_build_query($parameters));
