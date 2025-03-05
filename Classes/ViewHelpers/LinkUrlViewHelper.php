@@ -6,7 +6,7 @@ namespace In2code\Bluesky\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
-class LinkHashtagsViewHelper extends AbstractViewHelper
+class LinkUrlViewHelper extends AbstractViewHelper
 {
     protected $escapeOutput = false;
 
@@ -23,26 +23,25 @@ class LinkHashtagsViewHelper extends AbstractViewHelper
         if ($text === null) {
             $text = $this->renderChildren();
         }
-        $text = $this->protectAsciiCharacters($text);
         $text = $this->addLinks($text);
-        $text = $this->restoreAsciiCharacters($text);
         return $text;
-    }
-
-    private function protectAsciiCharacters(string $text): string
-    {
-        return preg_replace('~#([0-9]{3,4};)~', '# $1', $text);
     }
 
     private function addLinks(string $text): string
     {
-        $replaceString = '<a href="https://web-cdn.bsky.app/hashtag/$1"' . $this->getAttributeString() . '>$0</a>';
-        return preg_replace('~#([0-9a-zA-Z_äöüÄÖÜß]+)~', $replaceString, $text);
+        $pattern = '~(^|\s+)([a-zA-Z0-9]+\.[a-z]{2,3}(\.[a-z]{2,3})?[\/\.a-zA-Z0-9_-]*)($|\s+)~';
+        return preg_replace_callback($pattern, [$this, 'getReplaceString'], $text);
     }
 
-    private function restoreAsciiCharacters(string $text): string
+    private function getReplaceString(array $matches): string
     {
-        return preg_replace('~# ([0-9]{3,4};)~', '#$1', $text);
+        $href = $matches[2];
+        if (str_starts_with($href, 'http://') === false && str_starts_with($href, 'https://') === false) {
+            $href = 'https://' . $href;
+        }
+        return $matches[1] . '<a href="' . $href . '"' . $this->getAttributeString() . '>'
+            . $matches[2] . '</a>'
+            . $matches[4];
     }
 
     private function getAttributeString(): string
