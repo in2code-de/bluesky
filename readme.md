@@ -29,6 +29,18 @@ plugin.tx_bluesky {
 }
 ```
 
+## Development
+
+You can spin up a development environment for this extension using [DDEV](https://ddev.com/).
+
+```shell
+ddev start
+ddev initialize
+ddev restart # sometimes needed to copy configuration presets properly
+```
+
+The default backend user present in the database dump has the credentials `admin` / `John3:16`.
+
 ## Changelog
 
 | Version | Date       | State   | Description                                                                             |
