@@ -1,2 +1,5 @@
 .idea/
+.build/
+config/
+var/
 composer.lock
