@@ -20,6 +20,17 @@
 		"php": ">=8.2.0",
 		"typo3/cms-core": "^13.4"
 	},
+	"require-dev": {
+		"typo3/cms-backend": "^13.4",
+		"typo3/cms-extbase": "^13.4",
+		"typo3/cms-extensionmanager": "^13.4",
+		"typo3/cms-filelist": "^13.4",
+		"typo3/cms-fluid": "^13.4",
+		"typo3/cms-frontend": "^13.4",
+		"typo3/cms-install": "^13.4",
+		"typo3/minimal": "^13",
+		"typo3/cms-fluid-styled-content": "^13.4"
+	},
 	"replace": {
 		"typo3-ter/bluesky": "self.version"
 	},
@@ -28,9 +39,20 @@
 			"In2code\\Bluesky\\": "Classes/"
 		}
 	},
+	"config": {
+		"vendor-dir": ".build/vendor",
+		"bin-dir": ".build/vendor/bin",
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		}
+	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "bluesky"
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".build/public",
+			"extension-key": "bluesky",
+			"ignore-as-root": false
 		}
 	}
 }
