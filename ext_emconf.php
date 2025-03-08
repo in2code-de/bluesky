@@ -1,6 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Show bluesky feed in TYPO3',
+    'title' => 'Bluesky plugin',
+    'description' => 'Show bluesky feed of an author in TYPO3 frontend.',
     'category' => 'plugin',
     'version' => '1.3.0',
     'author' => 'Alex Kellner',
