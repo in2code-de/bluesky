@@ -15,6 +15,10 @@
 				<source>Account name</source>
 				<target state="translated">Account Name</target>
 			</trans-unit>
+			<trans-unit id="plugin.list.flexform.account.placeholder">
+				<source>in2code.de or https://web-cdn.bsky.app/profile/in2code.de</source>
+				<target state="translated">in2code.de oder https://web-cdn.bsky.app/profile/in2code.de</target>
+			</trans-unit>
 			<trans-unit id="plugin.list.flexform.limit.label">
 				<source>Limit number of posts</source>
 				<target state="translated">Anzahl Posts limitieren</target>
