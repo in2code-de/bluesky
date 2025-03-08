@@ -12,7 +12,7 @@
                         <label>LLL:EXT:bluesky/Resources/Private/Language/locallang_db.xlf:plugin.list.flexform.account.label</label>
                         <config>
                             <type>input</type>
-                            <placeholder>in2code.de</placeholder>
+                            <placeholder>LLL:EXT:bluesky/Resources/Private/Language/locallang_db.xlf:plugin.list.flexform.account.placeholder</placeholder>
                             <eval>trim,required</eval>
                         </config>
                     </settings.account>

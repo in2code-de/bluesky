@@ -24,7 +24,7 @@ class BlueskyRepository
     public function findBySettings(array $settings): array
     {
         $parameters = [
-            'actor' => $settings['account'] ?? 'in2code.de',
+            'actor' => $this->getActor($settings),
             'limit' => (int)($settings['limit'] ?? 10) ?: 10,
             'filter' => 'posts_and_author_threads',
         ];
@@ -41,5 +41,20 @@ class BlueskyRepository
             throw new RequestException('The service returned an unexpected format', 1741173605);
         }
         return $result['feed'];
+    }
+
+    /**
+     * https://bsky.app/profile/www.helmholtz-munich.de
+     *
+     * @param array $settings
+     * @return string
+     */
+    private function getActor(array $settings): string
+    {
+        $account = $settings['account'] ?? 'in2code.de';
+        if (stristr($account, '/')) {
+            $account = basename($account);
+        }
+        return $account;
     }
 }

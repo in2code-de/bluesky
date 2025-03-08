@@ -12,6 +12,9 @@
 			<trans-unit id="plugin.list.flexform.account.label">
 				<source>Account name</source>
 			</trans-unit>
+			<trans-unit id="plugin.list.flexform.account.placeholder">
+				<source>in2code.de or https://web-cdn.bsky.app/profile/in2code.de</source>
+			</trans-unit>
 			<trans-unit id="plugin.list.flexform.limit.label">
 				<source>Limit number of posts</source>
 			</trans-unit>

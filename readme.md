@@ -45,6 +45,7 @@ The default backend user present in the database dump has the credentials `admin
 
 | Version | Date       | State   | Description                                                                             |
 |---------|------------|---------|-----------------------------------------------------------------------------------------|
+| 1.3.0   | 2025-03-08 | Feature | Also support full profile url for account id, improve placeholder text in plugin        |
 | 1.2.0   | 2025-03-06 | Feature | Add local development environment                                                       |
 | 1.1.0   | 2025-03-05 | Feature | Autolink url in posts, don't use ascii characters as hashtags, ignore colon in hashtags |
 | 1.0.1   | 2025-03-05 | Bugfix  | Use default values if FlexForm is empty                                                 |
